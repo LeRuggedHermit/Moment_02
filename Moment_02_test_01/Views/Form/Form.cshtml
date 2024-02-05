@@ -1,0 +1,34 @@
+@model Moment_02_test_01.Models.Items;
+
+
+<div>
+    <h2>Ladda upp en bok vettja!</h2>
+    <p>Och glöm inte författare och genre!</p>
+</div>
+
+<div class="Form-box">
+<!-- Formulär för böcker: -->
+    <form method="post">
+        <!-- Aktivera felmedelanden: -->
+<div asp-validation-summary="ModelOnly"></div>
+<!-- Input för namn-proppen: -->
+        <label asp-for="Name"></label>
+        <input asp-for="Name">
+        <span asp-validation-for="Name"></span>
+
+<!-- Input för författar-Proppen: -->
+        <label asp-for="Author"></label>
+        <input asp-for="Author">
+        <span asp-validation-for="Author"></span>
+
+<!-- Input för Genre-proppen: -->
+        <label asp-for="Category"></label>
+        <input asp-for="Category">
+        <span asp-validation-for="Category"></span>
+
+<!-- submitknapp och label: -->
+        <label for="submit">Addera</label>
+        <input type="submit" value="Submit"> 
+    </form>
+
+</div>

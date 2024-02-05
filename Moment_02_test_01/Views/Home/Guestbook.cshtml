@@ -1,0 +1,59 @@
+@model Moment_02_test_01.Models.GB_POST; //Åberopar moellen GB_POST
+@{
+    //eftersom Modellen redan åberopats här används den här metoden här för att skriva ut gästboks inlägg:
+    string jsonFilePath = "GB.json"; //läser in JSONfilens filväg i variabel
+    string jsonContent = System.IO.File.ReadAllText(jsonFilePath); //läser innehållet i JSON-fil
+    var jsonObjects = System.Text.Json.JsonSerializer.Deserialize<List<GB_POST>>(jsonContent); //avserialiserar innehåll och lägger i lista:
+}
+
+
+
+<div class="Form-box">
+    <!-- POST-formulär: -->
+    <form method="post">
+        <!-- aktivera felmeddelanden: -->
+        <div asp-validation-summary="ModelOnly"></div>
+
+<!-- input, label och error-span för namn: -->
+        <label asp-for="Name"></label>
+        <input asp-for="Name">
+        <span asp-validation-for="Name"></span>
+
+<!-- input, label och error-span för meddelande: -->
+        <label asp-for="MSG"></label>
+        <input asp-for="MSG">
+        <span asp-validation-for="MSG"></span>
+<!-- input, label och error-span för Upplevelse: -->
+        <label asp-for="XP"></label>
+        <input asp-for="XP" type="radio" name="XP" value="true" checked>ja
+        <input asp-for="XP" type="radio" name="XP" value="false">nej
+        <span asp-validation-for="XP"></span>
+        <!-- input, label och error-span för betyg: -->
+        <label asp-for="Rating"></label>
+        <input asp-for="Rating">
+        <span asp-validation-for="Rating"></span>
+
+<!-- Label och submit knapp: -->
+        <label for="submit">skriv i gästboken!</label>
+        <input type="submit" value="Submit">
+
+    </form>
+</div>
+
+<div class="guestbook">
+<h2>@ViewBag.Message</h2>
+
+    <article class="the-list">
+
+<!-- Foreachloop som skriver ut innehållet i gästboks-json på skärmen: -->
+@foreach (var obj in jsonObjects){
+    <section class="list">
+<h2>från: @obj.Name</h2>
+<h3>Meddelande: @obj.MSG</h3>
+<p>Hade personen trevligt: @obj.XP</p>
+<p>Betyg: @obj.Rating</p>
+    </section> 
+}
+
+</article>
+</div>

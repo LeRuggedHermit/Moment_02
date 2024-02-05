@@ -1,0 +1,162 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  background-color: rgb(181, 197, 249);
+}
+
+header {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.H-container {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  padding: 5px;
+}
+
+.H-container img {
+  width: 250px;
+}
+
+.nav-box{
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.nav-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.nav-list li,
+.navlink{
+  list-style: none;
+  font-size: 130%;
+  color: white;
+  padding: 10px;
+}
+
+
+main{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.main-container{
+  background-color: antiquewhite;
+  width: 80%;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.the-list{
+  border: solid black 2px;
+  width: 150%;
+  text-align: center;
+  background-color: white;
+}
+
+.list{
+  border: solid black 1px;
+  text-align: center;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+label{
+  font-weight: 500;
+  font-size: 120%;
+}
+
+input[type=text],
+input[type=number]
+{
+  width: 200px;
+  height: 50px;
+}
+
+
+footer {
+  color: black;
+  height: 50px;
+  text-align: center;
+  text-decoration: underline;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.guestbook{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+
+}
+
+
+@media (max-width: 1000px) {
+
+  .nav-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .nav-list li,
+  .navlink{
+   font-size: 110%;
+  }
+
+
+}

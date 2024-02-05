@@ -1,0 +1,19 @@
+﻿
+
+@model IEnumerable<Moment_02_test_01.Models.Items>//model med IENUM för bättre loop-barhet
+
+
+<div class="content">
+    <article class="the-list">
+        <!-- Foreach-loop som loopar ut innehåll på skärmen -->
+          @foreach(var Item in Model){
+         <section class="list">
+            <h2>@Item.Author</h2>
+            <h3>@Item.Name</h3>
+            <p>@Item.Category</p>
+
+        </section>
+    }
+    </article>
+ 
+</div>

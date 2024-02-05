@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Titel ska vara titel från ViewData: -->
+    <title>@ViewData["Title"] - Moment_02_test_01</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Moment_02_test_01.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+<!-- Läser in Partial: -->
+    <partial name="_HeaderPartial" />
+
+<!-- Navigering: -->
+    <div class="nav-box">
+        <nav>
+            <ul class="nav-list">
+                <li>
+<a  class="navlink" asp-controller="Home" asp-action="Index">Startsidan</a>
+                </li>
+                <li>
+<a  class="navlink" asp-controller="Form" asp-action="Form">Skapa lista</a>
+                </li>
+                <li>
+<a  class="navlink" asp-controller="Home" asp-action="Guestbook">Skriv i Gästboken</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <div class="main-container">
+             @RenderBody()
+        </div>
+    </main>
+
+    <footer>
+        <p>Av Simon Brandtman - kontakt: sibr2200@student.miun.se</p>
+    </footer>
+    <!--<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a> -->
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
